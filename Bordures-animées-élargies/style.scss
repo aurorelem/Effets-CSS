@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i'); 
+//Ce code est une méthode alternative pour importer une police Google. 
+//Au lieu d'utiliser la balise <link> dans la section <head> de son HTML, 
+//Utiliser la règle @import dans son fichier CSS.
+
+// Blue/Pink
+$background: #3E4377;
+$border: #FC5185;
+$text: #FFF;
+
+html {
+    background: $background;
+    color: $text;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.border-button {
+    padding: 1em 1.75em;
+    margin: 0.25em;
+    background: none;
+    display: inline-block; //définit le type d'affichage de l'élément sur "inline-block", ce qui signifie qu'il est en ligne mais peut avoir une largeur et une hauteur définies.
+    color: $text;
+    cursor: pointer;
+    font-size: 21px;
+    line-height: 1.6; //définit la hauteur de ligne de l'élément sur 1,6, ce qui signifie que chaque ligne de texte aura 1,6 fois la hauteur de la police.
+    text-decoration: none; //définit la décoration de texte de l'élément sur "none", ce qui signifie qu'il n'y a pas de soulignement ou de ligne de travers sur le texte. 
+}
+
+html { 
+    height: 100%; 
+    display: flex; 
+}
+
+body { 
+    margin: auto; 
+    width: 100%; 
+    text-align: center; 
+}
+
+*, *:before, *:after { //Le sélecteur *, *:before, *:after permet d'appliquer la propriété box-sizing à tous les éléments de la page, ainsi qu'à leurs pseudo-éléments ::before et ::after. En utilisant le sélecteur universel *, on applique la propriété à tous les éléments. En ajoutant :before et :after, on s'assure que la propriété s'applique également aux pseudo-éléments.
+    box-sizing: border-box; //La propriété box-sizing permet de définir la façon dont la largeur et la hauteur d'un élément HTML sont calculées. Par défaut, la largeur et la hauteur ne prennent en compte que le contenu de l'élément (le contenu textuel, les images, etc.). Cela peut poser des problèmes de mise en page, en particulier lorsque l'on utilise des bordures ou des marges, car ces éléments sont ajoutés à la largeur et à la hauteur de l'élément.
+}             //Pour éviter cela, on peut utiliser la valeur border-box pour la propriété box-sizing. Cette valeur indique que la largeur et la hauteur de l'élément doivent prendre en compte la bordure et la marge, en plus du contenu. Cela facilite la mise en page et permet de définir plus facilement des éléments avec des dimensions précises.
+
+.border-button {
+    box-shadow: 0px 0px 0px 5px $border;
+    transition: box-shadow 0.1s linear;
+    margin: 0.5em;
+  }
+
+.border-button:hover { 
+    box-shadow: 0px 0px 0px 10px 
+    $border; 
+}
