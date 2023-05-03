@@ -1,0 +1,154 @@
+.box {
+    position: relative; /*C-à-d fixe*/
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    border: solid 3px transparent; /*Ne pas mettre de couleur, on la mettra à la prochaine étape. !Ne pas confondre avec border color*/
+}
+
+.top,
+.bottom,
+.right,
+.left {
+    position: absolute; /*Positionne l'élément par rapport à son 1° parent positionné et s'il n'y en a pas, l'élément sera positionné par apport au bas de la page*/
+    /*-webkit-animation: 8s linear infinite; La propriété animation est dft avec 2 valeurs: 1° -webkit-animation pour les nav Google Chrome et Safari*/
+            animation: 8s linear infinite; /*2° animation qui est destiné aux autres nav., les 2 animations sont d'une durée de 8s d'animation en déroulement linéaire qui se répète à l'infini*/
+}
+
+.top {
+    top: -3px; /*Positionne l'élement en haut de son conteneur parent, en dehors de sa zone d'affichage*/
+    left: -3px; /*Idem gauche*/
+    height: 3px;
+    -webkit-animation-name: top; /*Nom de l'animation à appliquer à l'élément*/
+            animation-name: top; /*Idem*/
+}
+@keyframes top { /*L'animation "top" elle-même est définie avec une série de points-clés spécifiant les valeurs que les propriétés CSS doivent prendre à des moments précis de l'animation. Dans ce cas, l'animation "top" définira une barre horizontale jaune qui grandit à partir de la gauche, s'étend sur toute la largeur de la boîte, puis se rétracte vers la droite. Cette animation se répétera indéfiniment en boucle.*/
+    25% { /*Les points-clés sont définis en pourcentage de la durée totale de l'animation, de 0% à 100%.*/
+        width: 0;
+        background: blueviolet; /*Par exemple, à 25% de la durée totale de l'animation, la largeur de la barre sera de 0 et sa couleur sera jaune.*/
+    }
+    38% {
+        width: calc(103%);
+        background: blueviolet; /*À 38%, la largeur sera calculée à 103% (pour inclure le bord de la boîte) et la couleur sera à nouveau jaune.*/
+    }
+    50% {
+        background: blueviolet; /*À 50%, la couleur sera jaune sans changement de largeur, et ainsi de suite.*/
+    }
+    62% {
+        background: blueviolet;
+    }
+    75% {
+        width: calc(103%);
+        background: blueviolet;
+    }
+    88% {
+        left: auto;
+        right: -3px;
+        width: 0;
+        background: blueviolet;
+    }
+}
+
+.bottom {
+    bottom: -3px;
+    right: -3px;
+    height: 3px;
+    -webkit-animation-name: bottom;
+            animation-name: bottom;
+}
+@keyframes bottom {
+    0% {
+        width: 0;
+    }
+    12% {
+        width: calc(103%);
+        background: blueviolet;
+    }
+    25% {
+        background: blueviolet;
+    }
+    38% {
+        background: blueviolet;
+    }
+    50% {
+        width: calc(103%);
+        background: blueviolet;
+    }
+    62% {
+        left: -3px;
+        width: 0;
+        background: blueviolet;
+    }
+    75% {
+        background: blueviolet;
+    }
+}
+
+.left {
+    bottom: -3px;
+    left: -3px;
+    width: 3px;
+    -webkit-animation-name: left;
+            animation-name: left;
+}
+@keyframes left { /*Maintenant, utiliser juste @keyframes (compatible tt les nav.) à la place de @-webkit-keyframes (obselète)*/
+    12% {
+        height: 0;
+        background: blueviolet;
+    }
+    25% {
+        height: calc(103%);
+        background: blueviolet;
+    }
+    38% {
+        background: blueviolet;
+    }
+    50% {
+        background: blueviolet;
+    }
+    62% {
+        height: calc(103%);
+    }
+    75% {
+        top: -3px;
+        height: 0;
+        background: blueviolet;
+    }
+    88% {
+        background: blueviolet;
+    }
+}
+
+.right {
+    top: -3px;
+    right: -3px;
+    width: 3px;
+    -webkit-animation-name: right;
+            animation-name: right;
+}
+@keyframes right {
+    38% {
+        height: 0;
+        background: blueviolet;
+    }
+    50% {
+        height: calc(103%);
+        background: blueviolet;
+    }
+    62% {
+        background: blueviolet;
+    }
+    75% {
+        background: blueviolet;
+    }
+    88% {
+        height: calc(103%);
+        background: blueviolet;
+    }
+    100% {
+        top: auto;
+        bottom: -3px;
+        height: 0;
+        background: blueviolet;
+    }
+}
