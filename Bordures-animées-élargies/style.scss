@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i'); 
 //Ce code est une méthode alternative pour importer une police Google. 
 //Au lieu d'utiliser la balise <link> dans la section <head> de son HTML, 
-//Utiliser la règle @import dans son fichier CSS.
+//Utiliser la règle @import dans son fichier sCSS.
 
 // Blue/Pink
 $background: #3E4377;
@@ -44,12 +44,12 @@ body {
 }             //Pour éviter cela, on peut utiliser la valeur border-box pour la propriété box-sizing. Cette valeur indique que la largeur et la hauteur de l'élément doivent prendre en compte la bordure et la marge, en plus du contenu. Cela facilite la mise en page et permet de définir plus facilement des éléments avec des dimensions précises.
 
 .border-button {
-    box-shadow: 0px 0px 0px 5px $border;
-    transition: box-shadow 0.1s linear;
+    box-shadow: 0px 0px 0px 5px $border; //ajoute une ombre à la boîte qui entoure l'élément avec une couleur spécifiée par la variable $border. Cette ombre est définie comme étant à 0 pixels sur l'axe x, à 0 pixels sur l'axe y, à 0 pixels sur le flou et à 5 pixels sur l'étendue. Cela signifie qu'il n'y aura pas de décalage sur l'axe x ou y, l'ombre sera très nette et aura une étendue de 5 pixels.
+    transition: box-shadow 0.1s linear; //cela spécifie que la propriété "box-shadow" doit être modifiée de manière progressive en 0,1 seconde en utilisant une fonction de transition linéaire. Cela signifie que si la valeur de la propriété "box-shadow" change, cela se fera de manière progressive pendant une durée de 0,1 seconde.
     margin: 0.5em;
-  }
+  } // En résumé, cette classe est utilisée pour ajouter une bordure à un élément avec une ombre qui s'étend de 5 pixels et qui sera modifiée de manière progressive en 0,1 seconde lorsqu'elle est survolée ou cliquée. La classe ajoute également une marge de 0,5 em autour de l'élément. Notez que cette classe utilise une variable $border qui doit être définie ailleurs dans votre code CSS.
 
-.border-button:hover { 
-    box-shadow: 0px 0px 0px 10px 
+.border-button:hover { //Ce code définit une pseudo-classe CSS "hover" pour une classe appelée "border-button". Cette pseudo-classe spécifie les propriétés CSS qui doivent être appliquées lorsque l'utilisateur survole l'élément avec la souris.
+    box-shadow: 0px 0px 0px 10px //cela ajoute une ombre à la boîte qui entoure l'élément avec une couleur spécifiée par la variable $border. Cette ombre est définie comme étant à 0 pixels sur l'axe x, à 0 pixels sur l'axe y, à 0 pixels sur le flou et à 10 pixels sur l'étendue. Cela signifie qu'il n'y aura pas de décalage sur l'axe x ou y, l'ombre sera très nette et aura une étendue de 10 pixels.
     $border; 
 }
